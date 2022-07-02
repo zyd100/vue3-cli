@@ -61,7 +61,7 @@ export const asyncRoutes = [
       },
       {
         path: '/iconPark',
-        name: 'IconPark',
+        name: 'Icon',
         component: () => import('@/views/icon/index.vue'),
         meta: {
           title: '图标',

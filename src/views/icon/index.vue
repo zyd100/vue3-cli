@@ -53,7 +53,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup name="Icon">
   import { getIcons } from '@/api/icon';
   import { reactive, onBeforeMount } from 'vue';
   import Descrition from '@/components/Descrition/index.vue';

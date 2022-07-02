@@ -1,6 +1,11 @@
 <template>
   <div v-if="store.getters['setting/routerView']" class="app-main-container">
-    <router-view class="app-main-height" />
+    <router-view v-slot="{ Component }" class="app-main-height">
+      <!-- <transition name="fade-transform"> -->
+      <keep-alive :include="cacheView">
+        <component :is="Component" />
+      </keep-alive>
+    </router-view>
     <footer class="footer-copyright">{{ copyrightStr }} </footer>
   </div>
 </template>
@@ -12,10 +17,14 @@
 </script>
 
 <script setup>
-  import { ref } from 'vue';
+  import { computed, ref } from 'vue';
   import { useStore } from 'vuex';
   import { setting } from '@/config/setting';
   const { copyright } = setting;
+
+  const cacheView = computed(() => {
+    return store.getters['tabsBar/visitedRoutes'].map((x) => x.name);
+  });
 
   const copyrightStr = ref(copyright);
   const store = useStore();

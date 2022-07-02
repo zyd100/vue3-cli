@@ -5,7 +5,7 @@ import legacy from '@vitejs/plugin-legacy';
 import { viteMockServe } from 'vite-plugin-mock';
 import { setting } from './src/config/setting';
 import { svgBuilder } from './src/plugin/svgBuilder';
-
+import vueSetupExtend from 'vite-plugin-vue-setup-extend'
 import OptimizationPersist from 'vite-plugin-optimize-persist';
 import PkgConfig from 'vite-plugin-package-config';
 
@@ -47,6 +47,7 @@ export default defineConfig({
   clearScreen,
   plugins: [
     vue(),
+    vueSetupExtend(),
     PkgConfig(),
     OptimizationPersist(),
     legacy({
