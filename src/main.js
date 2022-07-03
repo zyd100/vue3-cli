@@ -32,5 +32,4 @@ app.use(store);
 // 注册字节跳动图标
 import iconPark from './plugin/icon-park';
 iconPark(app);
-
 app.mount('#app');

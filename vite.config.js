@@ -1,14 +1,13 @@
-import { defineConfig } from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 const path = require('path');
 import vue from '@vitejs/plugin-vue';
 import legacy from '@vitejs/plugin-legacy';
 import { viteMockServe } from 'vite-plugin-mock';
 import { setting } from './src/config/setting';
 import { svgBuilder } from './src/plugin/svgBuilder';
-import vueSetupExtend from 'vite-plugin-vue-setup-extend'
+import vueSetupExtend from 'vite-plugin-vue-setup-extend';
 import OptimizationPersist from 'vite-plugin-optimize-persist';
 import PkgConfig from 'vite-plugin-package-config';
-
 
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
@@ -35,6 +34,8 @@ const {
   drop_debugger,
   chunkSizeWarningLimit,
 } = setting;
+
+const USE_MOCK = loadEnv(process.env.NODE_ENV, './').VITE_MOCK === 'true';
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -84,7 +85,7 @@ export default defineConfig({
     viteMockServe({
       mockPath: 'mock',
       supportTs: false,
-      localEnabled: isDev,
+      localEnabled: isDev && USE_MOCK,
       prodEnabled: !isDev,
       injectCode: `
           import { setupProdMockServer } from './mockProdServer';
