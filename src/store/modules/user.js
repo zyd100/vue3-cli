@@ -1,5 +1,5 @@
 import { getUserInfo, login } from '@/api/user';
-import { getAccessToken, removeAccessToken, setAccessToken } from '@/utils/accessToken';
+import { getAccessToken, removeAccessToken, setAccessToken } from '@/utils/token-util';
 
 import { setting } from '@/config/setting';
 const { title, tokenName } = setting;

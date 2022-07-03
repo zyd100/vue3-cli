@@ -1,5 +1,5 @@
 import { setting } from '@/config/setting';
-const { langKey, themeKey } = setting;
+const {  themeKey } = setting;
 import Cookies from 'js-cookie';
 
 
