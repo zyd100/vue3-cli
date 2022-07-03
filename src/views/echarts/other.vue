@@ -113,7 +113,6 @@
   export default {
     components: { Descrition, Echarts },
     setup() {
-
       const state = reactive({
         xAxis: {
           data: ['2017-10-24', '2017-10-25', '2017-10-26', '2017-10-27'],
@@ -297,7 +296,6 @@
 
       return {
         ...toRefs(state),
-
       };
     },
   };

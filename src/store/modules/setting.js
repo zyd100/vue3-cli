@@ -55,7 +55,7 @@ const mutations = {
   },
   CHANGE_IS_DRAWER: (state, flag) => {
     state.isDrawer = flag;
-  }
+  },
 };
 
 const actions = {
@@ -93,7 +93,6 @@ const actions = {
   setTheme: ({ commit }, theme) => {
     commit('SET_THEME', theme);
   },
-
 };
 
 export default {

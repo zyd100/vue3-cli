@@ -54,7 +54,6 @@
   export default {
     components: { Descrition, Echarts },
     setup() {
-
       const state = reactive({
         xAxis: {
           type: 'category',

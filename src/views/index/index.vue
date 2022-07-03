@@ -55,7 +55,7 @@
             </template>
             <div class="count-box">
               <div class="item" v-for="(item, index) in state.orderList" :key="index">
-                <span class="label">订单{{item.value}}</span>
+                <span class="label">订单{{ item.value }}</span>
                 <CountTo
                   class="count"
                   :class="item.status"
@@ -116,7 +116,6 @@
 
   import { useStore } from 'vuex';
   const store = useStore();
-
 
   const state = reactive({
     list: [],

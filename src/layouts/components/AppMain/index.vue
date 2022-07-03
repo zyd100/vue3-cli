@@ -23,7 +23,9 @@
   const { copyright } = setting;
 
   const cacheView = computed(() => {
-    return store.getters['tabsBar/visitedRoutes'].filter(x=>x.name&&!x.meta.noCache).map((x) => x.name);
+    return store.getters['tabsBar/visitedRoutes']
+      .filter((x) => x.name && !x.meta.noCache)
+      .map((x) => x.name);
   });
 
   const copyrightStr = ref(copyright);

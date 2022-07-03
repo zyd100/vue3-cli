@@ -42,10 +42,8 @@
     </div>
     <Descrition title="属性" :showDesc="false"></Descrition>
     <el-table :data="state.icon.props" border style="width: 100%">
-      <el-table-column prop="param" label="参数" width="180">
-      </el-table-column>
-      <el-table-column prop="type" label="类型" width="180">
-      </el-table-column>
+      <el-table-column prop="param" label="参数" width="180"> </el-table-column>
+      <el-table-column prop="type" label="类型" width="180"> </el-table-column>
       <el-table-column prop="all" label="可选值"> </el-table-column>
       <el-table-column prop="default" label="默认值"> </el-table-column>
       <el-table-column prop="desc" label="说明"> </el-table-column>
@@ -84,7 +82,7 @@
   };
 
   const handleClickChip = (icon) => {
-    console.log(icon)
+    console.log(icon);
     toClipboard(icon);
     ElMessage({
       message: '复制成功:' + icon,

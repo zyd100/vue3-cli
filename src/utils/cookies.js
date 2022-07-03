@@ -1,7 +1,6 @@
 import { setting } from '@/config/setting';
-const {  themeKey } = setting;
+const { themeKey } = setting;
 import Cookies from 'js-cookie';
-
 
 export function getSettings() {
   const settings = Cookies.get(themeKey);

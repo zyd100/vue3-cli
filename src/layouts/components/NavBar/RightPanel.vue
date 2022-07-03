@@ -20,7 +20,6 @@
 </script>
 
 <script setup>
-
   import { useStore } from 'vuex';
 
   import { computed, nextTick } from 'vue';
@@ -31,10 +30,7 @@
     },
   });
 
-
   const store = useStore();
-
-
 
   const settings = computed(() => {
     return store.getters['setting/settings'];
@@ -48,7 +44,6 @@
       store.dispatch('setting/setRouterView', true);
     });
   };
-
 </script>
 
 <style lang="scss" scoped>

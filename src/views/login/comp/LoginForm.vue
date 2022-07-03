@@ -27,7 +27,7 @@
     </el-form-item>
     <el-form-item>
       <el-button type="primary" :loading="loading" class="login-btn" round @click="handleLogin">
-          登录
+        登录
       </el-button>
     </el-form-item>
     <el-divider>第三方登录</el-divider>
