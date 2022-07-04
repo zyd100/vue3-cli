@@ -37,7 +37,7 @@ export const asyncRoutes = [
         component: () => import('../views/index/index.vue'),
         meta: {
           title: '首页',
-          icon: 'icon-home',
+          icon: 'icon-park-icon-home',
           affix: true,
           noKeepAlive: true,
         },
@@ -48,7 +48,7 @@ export const asyncRoutes = [
     path: '/comp',
     component: Layout,
     name: 'Comp',
-    meta: { title: '组件', icon: 'icon-code' },
+    meta: { title: '组件', icon: 'icon-park-icon-code' },
     children: [
       {
         path: '/element',
@@ -56,7 +56,7 @@ export const asyncRoutes = [
         component: () => import('@/views/element/index.vue'),
         meta: {
           title: 'Element 组件',
-          icon: 'icon-code',
+          icon: 'icon-park-icon-code',
         },
       },
       {
@@ -65,7 +65,7 @@ export const asyncRoutes = [
         component: () => import('@/views/icon/index.vue'),
         meta: {
           title: '图标',
-          icon: 'icon-like',
+          icon: 'icon-park-icon-like',
         },
       },
       {
@@ -74,7 +74,7 @@ export const asyncRoutes = [
         component: () => import('@/views/echarts/index.vue'),
         meta: {
           title: '图表',
-          icon: 'icon-chart-line',
+          icon: 'icon-park-icon-chart-line',
         },
         children: [
           {
@@ -111,7 +111,7 @@ export const asyncRoutes = [
     component: Layout,
     meta: {
       title: '错误页面',
-      icon: 'icon-link-cloud-faild',
+      icon: 'icon-park-icon-link-cloud-faild',
     },
     children: [
       {
@@ -120,7 +120,7 @@ export const asyncRoutes = [
         component: () => import('@/views/errorPage/404.vue'),
         meta: {
           title: '404',
-          icon: 'icon-link-cloud-faild',
+          icon: 'icon-park-icon-link-cloud-faild',
         },
       },
       {
@@ -129,7 +129,7 @@ export const asyncRoutes = [
         component: () => import('@/views/errorPage/401.vue'),
         meta: {
           title: '401',
-          icon: 'icon-link-interrupt',
+          icon: 'icon-park-icon-link-interrupt',
         },
       },
     ],

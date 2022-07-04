@@ -285,7 +285,14 @@
   resolved "https://registry.npmmirror.com/@icon-park/vue-next/-/vue-next-1.4.0.tgz"
   integrity sha512-B70QQdbN46Hlu9AQmNLp3upRMMQq8+4ioLbESMlGNN8zjhqXDjhYfhViAq78wk9CQj46MD4dnMW44voShspf/Q==
 
-"@iconify/types@^1.1.0":
+"@iconify-json/ep@^1.1.6":
+  version "1.1.6"
+  resolved "https://registry.npmmirror.com/@iconify-json/ep/-/ep-1.1.6.tgz#f197c7b18e2d6528246ce56fdbde48b1d739fb15"
+  integrity sha512-EJNIHVsBOOfH6cuRqzPJT+zTnLPcLQGu3/WIENEXpWQ0wwIkaSWAewmPjS1ksvu4rf1lLJEgMimuivIrGSONKA==
+  dependencies:
+    "@iconify/types" "*"
+
+"@iconify/types@*", "@iconify/types@^1.1.0":
   version "1.1.0"
   resolved "https://registry.npmmirror.com/@iconify/types/-/types-1.1.0.tgz"
   integrity sha512-Jh0llaK2LRXQoYsorIH8maClebsnzTcve+7U3rQUSnC11X4jtPnFuyatqFLvMxZ8MLG8dB4zfHsbPfuvxluONw==

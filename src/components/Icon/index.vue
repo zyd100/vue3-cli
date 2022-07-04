@@ -5,32 +5,45 @@
       :class="name"
       :style="{ color, 'font-size': size + 'px' }"
     ></i>
-    <component
-      v-if="type === 'icon-park'"
-      :theme="theme"
-      :size="size"
-      :strokeWidth="strokeWidth"
-      :is="name"
-      :fill="color"
-      class="icon"
-    />
+    <span v-if="type === 'icon-park'">
+      <component
+        :theme="theme"
+        :size="size"
+        :strokeWidth="strokeWidth"
+        :is="name"
+        :fill="color"
+        class="icon"
+      />
+    </span>
+    <span v-if="name.indexOf('icon-park') !== -1">
+      <component
+        :theme="theme"
+        :size="size"
+        :strokeWidth="strokeWidth"
+        :is="getRealIconName('icon-park-', name)"
+        :fill="color"
+        class="icon"
+      />
+    </span>
+
     <el-icon v-if="type === 'el-icon'" :style="{ color, 'font-size': size + 'px' }">
       <component :is="name" />
     </el-icon>
+    <svg-icon v-if="type === 'svg-icon'" :name="name" />
+
+    <svg-icon v-if="name.indexOf('svg-') !== -1" :name="getRealIconName('svg-', name)" />
   </span>
 </template>
 
-<script setup>
+<script setup name="Icon">
   defineProps({
     type: {
       type: String,
-      default: 'icon-park',
+      default: '',
     },
     size: {
-      type() {
-        return Number | String;
-      },
-      default: 14,
+      type: String,
+      default: '14',
     },
     color: {
       type: String,
@@ -41,8 +54,8 @@
       default: 'outline',
     },
     strokeWidth: {
-      type: Number,
-      default: 3,
+      type: String,
+      default: '3',
     },
     name: {
       type: String,
@@ -53,5 +66,9 @@
       default: 'icon',
     },
   });
+
+  const getRealIconName = (prefix, name) => {
+    return name.slice(prefix.length);
+  };
 </script>
 <style lang="scss" scoped></style>

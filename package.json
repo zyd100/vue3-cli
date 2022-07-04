@@ -42,6 +42,7 @@
     "vuex": "^4.0.2"
   },
   "devDependencies": {
+    "@iconify-json/ep": "^1.1.6",
     "@intlify/vite-plugin-vue-i18n": "^3.4.0",
     "@types/node": "^16.7.1",
     "@vitejs/plugin-legacy": "^1.5.3",
@@ -74,15 +75,6 @@
     "vite-plugin-package-config": "^0.1.1",
     "vite-plugin-style-import": "^1.2.1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hu-snail/vue3-admin-element-template.git"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/hu-snail/vue3-admin-element-template/issues"
-  },
-  "homepage": "https://github.com/hu-snail/vue3-admin-element-template",
   "engines": {
     "node": "^12 || >=14"
   },

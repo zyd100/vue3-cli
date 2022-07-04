@@ -4,13 +4,11 @@
     :index="item.children ? item.children[0].path : item.path"
     v-if="!item.meta || !item.children"
   >
-    <component
+    <Icon
       class="menu-icon"
       v-if="item.children ? item.children[0].meta.icon : item.meta.icon"
-      theme="outline"
-      size="14"
-      strokeWidth="3"
-      :is="item.children ? item.children[0].meta.icon : item.meta.icon"
+      :name="item.children ? item.children[0].meta.icon : item.meta.icon"
+      :color="isBlack ? '#fff' : '#666'"
     />
     <template #title>
       <span class="title">
@@ -20,26 +18,22 @@
   </el-menu-item>
   <el-sub-menu :class="{ 'is-black': isBlack }" :index="item.path" v-else>
     <template #title>
-      <component
+      <Icon
         class="menu-icon"
         v-if="item.meta.icon"
-        theme="outline"
-        size="14"
-        strokeWidth="3"
-        :is="item.meta.icon"
+        :name="item.meta.icon"
+        :color="isBlack ? '#fff' : '#666'"
       />
       <span class="title">{{ item.meta.title }}</span>
     </template>
     <template v-for="(option, index) in item.children">
       <menu-item v-if="option.children" :key="option.path" :item="option" />
       <el-menu-item v-else :index="option.path" :key="index">
-        <component
+        <Icon
           class="menu-icon"
-          v-if="option.meta.icon"
-          theme="outline"
-          size="14"
-          strokeWidth="3"
-          :is="option.meta.icon"
+          v-if="item.meta.icon"
+          :name="item.meta.icon"
+          :color="isBlack ? '#fff' : '#666'"
         />
         <span class="title">
           {{ option.meta.title }}
@@ -51,15 +45,15 @@
 
 <script>
   export default {
-    name: 'MenuItem',
+    name: 'MenuItem'
   };
 </script>
 
 <script setup>
   import { computed } from 'vue';
   import { useStore } from 'vuex';
-
   import { themeConfig } from '@/config/theme';
+  import Icon from '@/components/Icon/index.vue';
   const { themeOptions } = themeConfig;
 
   const whiteColors = ['#fff', '#ffffff', '#FFF', '#FFF', 'rgb(255, 255, 255)'];
